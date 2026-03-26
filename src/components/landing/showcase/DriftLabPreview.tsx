@@ -15,7 +15,6 @@ export default function DriftLabPreview() {
   const chartH = H - padY * 2;
   const n = months.length;
 
-  // Build stacked area paths (bottom-up)
   const cumulativeAtPoint = (pointIdx: number, upToRole: number): number => {
     let sum = 0;
     for (let r = 0; r <= upToRole; r++) {
@@ -27,15 +26,13 @@ export default function DriftLabPreview() {
   const toX = (i: number) => padX + (i / (n - 1)) * chartW;
   const toY = (val: number) => padY + chartH - (val / 100) * chartH;
 
-  const areaPaths = roleData.map((role, rIdx) => {
-    // Top edge (left to right)
-    const topPoints = Array.from({ length: n }, (_, i) => {
+  const areaPaths = roleData.map((_, rIdx) => {
+    const topPoints = Array.from({ length: n }, (__, i) => {
       const y = cumulativeAtPoint(i, rIdx);
       return `${toX(i).toFixed(1)},${toY(y).toFixed(1)}`;
     });
 
-    // Bottom edge (right to left)
-    const bottomPoints = Array.from({ length: n }, (_, i) => {
+    const bottomPoints = Array.from({ length: n }, (__, i) => {
       const y = rIdx === 0 ? 0 : cumulativeAtPoint(i, rIdx - 1);
       return `${toX(n - 1 - i).toFixed(1)},${toY(y).toFixed(1)}`;
     });
@@ -43,17 +40,26 @@ export default function DriftLabPreview() {
     return `M${topPoints.join(' L')} L${bottomPoints.join(' L')} Z`;
   });
 
+  // Trend: compare first vs last values for current main role (Duelist)
+  const duelistFirst = roleData[0].values[0];
+  const duelistLast = roleData[0].values[n - 1];
+  const trendUp = duelistLast >= duelistFirst;
+
   return (
     <div className="space-y-4">
       {/* Chart */}
       <div className="rounded-sm ghost-border bg-val-bg-secondary p-3 sm:p-4 overflow-hidden">
-        <div className="flex items-center justify-between mb-3">
-          <span className="font-barlow text-[10px] font-semibold text-val-text-muted uppercase tracking-widest">Role Distribution — 12 Months</span>
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+          <div className="flex items-center gap-2">
+            <span className="font-barlow text-[10px] font-semibold text-val-text-muted uppercase tracking-widest">Role Distribution</span>
+            <span className="font-jetbrains text-[10px] text-val-text-muted/50">12 Months</span>
+          </div>
+          {/* Legend — wraps on mobile */}
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
             {roleData.map((r) => (
               <div key={r.role} className="flex items-center gap-1">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: r.color }} />
-                <span className="font-barlow text-[9px] text-val-text-muted">{r.role}</span>
+                <span className="font-barlow text-[8px] sm:text-[9px] text-val-text-muted">{r.role}</span>
               </div>
             ))}
           </div>
@@ -71,9 +77,16 @@ export default function DriftLabPreview() {
               <line key={pct} x1={padX} y1={toY(pct)} x2={W - padX} y2={toY(pct)} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
             ))}
 
-            {/* Stacked areas */}
+            {/* Y-axis labels */}
+            {[25, 50, 75, 100].map((pct) => (
+              <text key={`y-${pct}`} x={padX - 4} y={toY(pct) + 3} textAnchor="end" fill="rgba(236,232,225,0.2)" fontSize="7" className="font-jetbrains">
+                {pct}%
+              </text>
+            ))}
+
+            {/* Stacked areas — higher opacity for vibrancy */}
             {areaPaths.map((path, i) => (
-              <path key={roleData[i].role} d={path} fill={roleData[i].color} opacity="0.5" />
+              <path key={roleData[i].role} d={path} fill={roleData[i].color} opacity="0.65" />
             ))}
 
             {/* Month labels */}
@@ -86,11 +99,11 @@ export default function DriftLabPreview() {
         </motion.div>
       </div>
 
-      {/* Agent Cards */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Agent Cards + Trend */}
+      <div className="grid grid-cols-2 sm:grid-cols-[1fr_1fr_auto] gap-3">
         {[
-          { label: 'Current Main', ...currentMain },
-          { label: 'Previous Main', ...previousMain },
+          { label: 'Current Main', ...currentMain, isCurrent: true },
+          { label: 'Previous Main', ...previousMain, isCurrent: false },
         ].map((card) => (
           <motion.div
             key={card.label}
@@ -98,15 +111,15 @@ export default function DriftLabPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="rounded-sm ghost-border bg-val-bg-secondary p-3 flex items-center gap-3"
+            className={`rounded-sm ghost-border bg-val-bg-secondary p-3 flex items-center gap-3 ${card.isCurrent ? 'data-strip-left' : ''}`}
           >
-            <div className="w-10 h-10 rounded-sm overflow-hidden bg-val-bg-tertiary relative flex-shrink-0">
+            <div className="w-11 h-11 rounded-sm overflow-hidden bg-val-bg-tertiary relative flex-shrink-0">
               <Image
                 src={`/assets/agents/${card.agent.toLowerCase()}.png`}
                 alt={card.agent}
                 fill
                 className="object-cover"
-                sizes="40px"
+                sizes="44px"
               />
             </div>
             <div>
@@ -116,6 +129,21 @@ export default function DriftLabPreview() {
             </div>
           </motion.div>
         ))}
+
+        {/* Trend Indicator */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="hidden sm:flex rounded-sm ghost-border bg-val-bg-secondary p-3 flex-col items-center justify-center text-center"
+        >
+          <svg className={`w-5 h-5 mb-1 ${trendUp ? 'text-val-stat-positive' : 'text-val-stat-negative'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d={trendUp ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'} />
+          </svg>
+          <span className="font-barlow text-[8px] text-val-text-muted uppercase tracking-wider">
+            {trendUp ? 'Specializing' : 'Diversifying'}
+          </span>
+        </motion.div>
       </div>
     </div>
   );

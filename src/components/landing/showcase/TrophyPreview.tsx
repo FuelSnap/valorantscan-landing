@@ -105,9 +105,10 @@ export default function TrophyPreview() {
             whileInView={{ rotate: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 200 }}
-            className="w-12 h-12 rounded-sm flex items-center justify-center mb-3"
+            className="w-12 h-12 rounded-sm flex items-center justify-center mb-3 relative overflow-hidden"
             style={{ backgroundColor: RARITY_COLORS.legendary.bg }}
           >
+            <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%]" />
             <svg className="w-7 h-7" fill="none" stroke={RARITY_COLORS.legendary.text} viewBox="0 0 24 24" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d={trophies[1].icon} />
             </svg>

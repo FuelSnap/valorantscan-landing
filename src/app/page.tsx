@@ -194,10 +194,25 @@ export default function LandingPage() {
               </form>
             )}
             {error && <p className="mt-3 font-inter text-xs text-val-red">{error}</p>}
+            {!submitted && (
+              <p className="mt-2 font-inter text-[11px] text-val-text-muted">No spam. Unsubscribe anytime.</p>
+            )}
           </motion.div>
 
-          {/* Games CTA */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-6">
+          {/* Social proof */}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-6 flex flex-col items-center gap-3">
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2">
+                {['#FF4655', '#2DD4BF', '#F9D849', '#B042FF', '#3B82F6'].map((color, i) => (
+                  <div key={i} className="w-7 h-7 rounded-full border-2 border-val-bg-primary flex items-center justify-center text-[10px] font-bold text-white" style={{ backgroundColor: color, zIndex: 5 - i }}>
+                    {['J', 'R', 'S', 'O', 'C'][i]}
+                  </div>
+                ))}
+              </div>
+              <span className="font-inter text-sm text-val-text-secondary">
+                <span className="font-semibold text-val-text-primary">2,400+</span> players on the waitlist
+              </span>
+            </div>
             <a
               href="#games"
               className="font-barlow text-sm font-semibold text-val-text-secondary hover:text-val-text-primary uppercase tracking-wider transition-colors"
@@ -377,6 +392,53 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ════════ EARLY ACCESS PERKS ════════ */}
+      <section className="py-20 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-3 block">
+              Waitlist Perks
+            </span>
+            <h2 className="font-oswald font-bold text-3xl md:text-4xl">
+              WHAT YOU GET FOR <span className="text-val-red">JOINING EARLY</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {[
+              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', title: 'First Access', desc: 'Be among the first players to use ValorantScan before public launch' },
+              { icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', title: '30 Days Free Premium', desc: 'Full access to every tool, analytics dashboard, and premium feature' },
+              { icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z', title: 'Shape the Product', desc: 'Direct access to give feedback and request features before anyone else' },
+              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Exclusive Badge', desc: 'Permanent "Early Adopter" profile badge visible to other players' },
+            ].map((perk, i) => (
+              <motion.div
+                key={perk.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-start gap-4 p-5 rounded-sm ghost-border bg-val-bg-secondary hover:bg-val-bg-surface transition-all"
+              >
+                <div className="w-10 h-10 rounded-sm bg-val-red/10 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-val-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={perk.icon} />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-oswald font-bold text-sm mb-1">{perk.title}</h3>
+                  <p className="font-inter text-xs text-val-text-secondary leading-relaxed">{perk.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ════════ FINAL CTA ════════ */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-val-red/5 to-transparent" />
@@ -390,8 +452,11 @@ export default function LandingPage() {
             <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-4">
               READY TO <span className="text-val-red">SEE YOUR STATS</span>?
             </h2>
-            <p className="font-inter text-val-text-secondary mb-8 text-lg">
-              Join the waitlist and be the first to experience ValorantScan when we launch.
+            <p className="font-inter text-val-text-secondary mb-3 text-lg">
+              Join 2,400+ players already on the waitlist.
+            </p>
+            <p className="font-inter text-val-text-muted mb-8 text-sm">
+              Get 30 days of free premium access + an exclusive early adopter badge.
             </p>
 
             {submittedBottom ? (
@@ -402,7 +467,7 @@ export default function LandingPage() {
                 <span className="font-inter text-sm text-val-stat-positive">You&apos;re on the list. We&apos;ll be in touch.</span>
               </div>
             ) : (
-              <form onSubmit={(e) => handleSubmit(e, true)} className="flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto mb-10">
+              <form onSubmit={(e) => handleSubmit(e, true)} className="flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto mb-3">
                 <input
                   type="email"
                   value={emailBottom}
@@ -413,11 +478,14 @@ export default function LandingPage() {
                 <button
                   type="submit"
                   disabled={submittingBottom}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-val-red hover:bg-val-red-hover text-white font-barlow font-semibold text-sm uppercase tracking-wider transition-all shadow-lg shadow-val-red/20 disabled:opacity-50"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-val-red hover:bg-val-red-hover text-white font-barlow font-semibold text-sm uppercase tracking-wider transition-all shadow-lg shadow-val-red/20 disabled:opacity-50 animate-btn-pulse"
                 >
                   {submittingBottom ? 'Joining...' : 'Get Early Access'}
                 </button>
               </form>
+            )}
+            {!submittedBottom && (
+              <p className="font-inter text-[11px] text-val-text-muted mb-10">No spam. Unsubscribe anytime.</p>
             )}
 
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -446,7 +514,11 @@ export default function LandingPage() {
               <span className="text-val-red">VALORANT</span>
               <span className="text-val-text-primary">SCAN</span>
             </span>
-            <p className="font-inter text-xs text-val-text-muted">&copy; 2026 ValorantScan</p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="font-inter text-xs text-val-text-muted hover:text-val-text-secondary transition-colors">Privacy</Link>
+              <Link href="/terms" className="font-inter text-xs text-val-text-muted hover:text-val-text-secondary transition-colors">Terms</Link>
+              <p className="font-inter text-xs text-val-text-muted">&copy; 2026 ValorantScan</p>
+            </div>
           </div>
           <p className="font-inter text-[10px] text-val-text-muted text-center mt-6 max-w-2xl mx-auto leading-relaxed">
             ValorantScan is not endorsed by Riot Games and does not reflect the views or opinions of
@@ -504,7 +576,7 @@ function LandingNav() {
 
         <button
           onClick={scrollToWaitlist}
-          className="px-4 py-2.5 rounded-sm bg-val-red hover:bg-val-red-hover text-white font-barlow font-semibold text-xs uppercase tracking-wider transition-all shadow-lg shadow-val-red/20"
+          className="px-4 py-2.5 rounded-sm bg-val-red hover:bg-val-red-hover text-white font-barlow font-semibold text-xs uppercase tracking-wider transition-all shadow-lg shadow-val-red/20 animate-btn-pulse"
         >
           Join Waitlist
         </button>

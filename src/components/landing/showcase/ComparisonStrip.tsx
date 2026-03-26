@@ -31,6 +31,7 @@ export default function ComparisonStrip() {
             className={`grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] items-center gap-2 sm:gap-4 px-3 sm:px-4 py-2.5 border-b border-white/[0.03] last:border-0 transition-colors ${
               row.isHighlight ? 'bg-val-red/[0.06]' : ''
             }`}
+            style={row.isHighlight ? { boxShadow: 'inset 3px 0 0 #FF4655' } : undefined}
           >
             <span className={`font-inter text-xs sm:text-sm ${row.isHighlight ? 'text-val-text-primary font-medium' : 'text-val-text-primary'}`}>
               {row.feature}

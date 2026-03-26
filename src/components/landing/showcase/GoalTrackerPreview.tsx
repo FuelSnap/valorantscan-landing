@@ -25,9 +25,10 @@ export default function GoalTrackerPreview() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="rounded-sm ghost-border bg-val-bg-secondary p-4 flex items-center justify-between"
+        className="rounded-sm ghost-border bg-val-bg-secondary p-4 flex items-center justify-between overflow-hidden relative"
       >
-        <div className="flex items-center gap-3">
+        <div className="absolute inset-0 bg-gradient-to-r from-val-red/[0.08] via-transparent to-transparent pointer-events-none" />
+        <div className="flex items-center gap-3 relative">
           <div className="text-2xl">🔥</div>
           <div>
             <div className="font-oswald font-bold text-lg text-val-text-primary">
@@ -36,8 +37,8 @@ export default function GoalTrackerPreview() {
             <div className="font-inter text-[11px] text-val-text-muted">Keep it up! You&apos;re on fire.</div>
           </div>
         </div>
-        <div className="text-right">
-          <div className="font-jetbrains font-bold text-xl text-val-stat-positive">{goalsCompleted}</div>
+        <div className="text-right relative">
+          <div className="font-jetbrains font-bold text-xl text-val-stat-positive" style={{ textShadow: '0 0 12px rgba(34,197,94,0.3)' }}>{goalsCompleted}</div>
           <div className="font-barlow text-[9px] text-val-text-muted uppercase tracking-wider">Goals Done</div>
         </div>
       </motion.div>
@@ -61,10 +62,16 @@ export default function GoalTrackerPreview() {
               {/* Progress Ring */}
               <div className="relative w-10 h-10 flex-shrink-0">
                 <svg className="w-10 h-10 -rotate-90" viewBox="0 0 32 32">
+                  <defs>
+                    <linearGradient id={`goal-grad-${i}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor={color} />
+                      <stop offset="100%" stopColor={color} stopOpacity="0.5" />
+                    </linearGradient>
+                  </defs>
                   <circle cx="16" cy="16" r="14" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2.5" />
                   <motion.circle
                     cx="16" cy="16" r="14" fill="none"
-                    stroke={color}
+                    stroke={`url(#goal-grad-${i})`}
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeDasharray={circumference}
@@ -72,6 +79,7 @@ export default function GoalTrackerPreview() {
                     whileInView={{ strokeDashoffset: offset }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: i * 0.12 + 0.2, ease: 'easeOut' }}
+                    style={goal.progress >= 80 ? { filter: `drop-shadow(0 0 6px ${color}60)` } : undefined}
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">

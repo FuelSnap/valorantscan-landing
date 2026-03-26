@@ -30,6 +30,7 @@ export default function EncountersPreview() {
                 <div
                   key={level}
                   className={`w-3 h-3 rounded-[2px] ${level <= Math.ceil(rivalryScore / 20) ? 'bg-val-red' : 'bg-white/[0.06]'}`}
+                  style={level <= Math.ceil(rivalryScore / 20) ? { boxShadow: '0 0 6px rgba(255,70,85,0.5)' } : undefined}
                 />
               ))}
             </div>
@@ -64,7 +65,7 @@ export default function EncountersPreview() {
 
             {/* VS Divider */}
             <div className="flex flex-col items-center gap-1 flex-shrink-0 px-4">
-              <div className="w-12 h-12 rounded-full bg-val-red/10 border border-val-red/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-val-red/10 border border-val-red/20 flex items-center justify-center" style={{ boxShadow: '0 0 20px rgba(255,70,85,0.25), 0 0 40px rgba(255,70,85,0.1)' }}>
                 <span className="font-oswald font-bold text-lg text-val-red">VS</span>
               </div>
               <div className="font-jetbrains text-xs font-bold text-val-text-primary tabular-nums">{matchup.wins}W-{matchup.losses}L</div>
@@ -100,13 +101,14 @@ export default function EncountersPreview() {
               <span className="font-barlow text-[9px] text-val-stat-positive uppercase tracking-wider">{matchup.wins} Wins</span>
               <span className="font-barlow text-[9px] text-val-stat-negative uppercase tracking-wider">{matchup.losses} Losses</span>
             </div>
-            <div className="h-2.5 rounded-full bg-val-stat-negative/30 overflow-hidden">
+            <div className="h-2.5 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(239,68,68,0.15) 0%, rgba(239,68,68,0.3) 100%)' }}>
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${winPct}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="h-full rounded-full bg-val-stat-positive"
+                className="h-full rounded-full"
+                style={{ background: 'linear-gradient(90deg, #22C55E, #4ADE80)', boxShadow: '0 0 8px rgba(34,197,94,0.4)' }}
               />
             </div>
           </div>
@@ -127,6 +129,7 @@ export default function EncountersPreview() {
               color: badge.color,
               borderColor: `${badge.color}33`,
               backgroundColor: `${badge.color}12`,
+              boxShadow: `0 0 16px ${badge.color}20, inset 0 0 12px ${badge.color}08`,
             }}
           >
             {BADGE_ICONS[badge.name] && (

@@ -72,9 +72,25 @@ export default function DriftLabPreview() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
           <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-32 sm:h-40" preserveAspectRatio="none">
+            <defs>
+              {roleData.map((r, i) => (
+                <linearGradient key={`grad-${i}`} id={`drift-grad-${i}`} x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor={r.color} stopOpacity="0.85" />
+                  <stop offset="100%" stopColor={r.color} stopOpacity="0.25" />
+                </linearGradient>
+              ))}
+              <filter id="drift-glow">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
             {/* Grid lines */}
             {[25, 50, 75].map((pct) => (
-              <line key={pct} x1={padX} y1={toY(pct)} x2={W - padX} y2={toY(pct)} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+              <line key={pct} x1={padX} y1={toY(pct)} x2={W - padX} y2={toY(pct)} stroke="rgba(255,255,255,0.04)" strokeWidth="1" strokeDasharray="4 4" />
             ))}
 
             {/* Y-axis labels */}
@@ -84,10 +100,21 @@ export default function DriftLabPreview() {
               </text>
             ))}
 
-            {/* Stacked areas — higher opacity for vibrancy */}
+            {/* Stacked areas with gradients */}
             {areaPaths.map((path, i) => (
-              <path key={roleData[i].role} d={path} fill={roleData[i].color} opacity="0.65" />
+              <path key={roleData[i].role} d={path} fill={`url(#drift-grad-${i})`} />
             ))}
+
+            {/* Top-edge stroke lines for definition */}
+            {areaPaths.map((_, i) => {
+              const topLine = Array.from({ length: n }, (__, pi) => {
+                const y = cumulativeAtPoint(pi, i);
+                return `${pi === 0 ? 'M' : 'L'}${toX(pi).toFixed(1)},${toY(y).toFixed(1)}`;
+              }).join(' ');
+              return (
+                <path key={`edge-${i}`} d={topLine} fill="none" stroke={roleData[i].color} strokeWidth="1.5" opacity="0.7" filter="url(#drift-glow)" />
+              );
+            })}
 
             {/* Month labels */}
             {months.map((m, i) => (

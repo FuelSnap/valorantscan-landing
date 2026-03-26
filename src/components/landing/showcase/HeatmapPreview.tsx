@@ -54,6 +54,7 @@ export default function HeatmapPreview() {
                       style={{
                         backgroundColor: INTENSITY_BG[row[col]],
                         transitionDelay: `${col * 30 + rowIdx * 10}ms`,
+                        boxShadow: row[col] >= 3 ? `0 0 ${row[col] === 4 ? '8' : '5'}px rgba(255,70,85,${row[col] === 4 ? '0.5' : '0.3'})` : undefined,
                       }}
                     />
                   ))}
@@ -101,7 +102,10 @@ export default function HeatmapPreview() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     className="h-full rounded-full"
-                    style={{ backgroundColor: agent.color }}
+                    style={{
+                      background: `linear-gradient(90deg, ${agent.color}88, ${agent.color})`,
+                      boxShadow: `0 0 6px ${agent.color}40`,
+                    }}
                   />
                 </div>
               </div>
@@ -114,16 +118,22 @@ export default function HeatmapPreview() {
           <div className="font-barlow text-[9px] font-semibold text-val-text-muted uppercase tracking-widest mb-2">Core Competency</div>
           <div className="relative w-20 h-20 mb-2">
             <svg className="w-20 h-20 -rotate-90" viewBox="0 0 36 36">
+              <defs>
+                <linearGradient id="core-ring-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#FF4655" />
+                  <stop offset="100%" stopColor="#FF8A94" />
+                </linearGradient>
+              </defs>
               <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2.5" />
               <motion.circle
-                cx="18" cy="18" r="15.9" fill="none" stroke="#FF4655" strokeWidth="2.5"
+                cx="18" cy="18" r="15.9" fill="none" stroke="url(#core-ring-grad)" strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeDasharray="100"
                 initial={{ strokeDashoffset: 100 }}
                 whileInView={{ strokeDashoffset: 100 - corePercent }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: 'easeOut' }}
-                style={{ filter: 'drop-shadow(0 0 6px rgba(255,70,85,0.4))' }}
+                style={{ filter: 'drop-shadow(0 0 8px rgba(255,70,85,0.5))' }}
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">

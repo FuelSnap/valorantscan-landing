@@ -29,6 +29,7 @@ export default function TrophyPreview() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="h-full rounded-full bg-gradient-to-r from-val-red to-val-accent-gold"
+            style={{ boxShadow: '0 0 10px rgba(255,70,85,0.4), 0 0 20px rgba(249,216,73,0.2)' }}
           />
         </div>
       </div>
@@ -54,6 +55,7 @@ export default function TrophyPreview() {
                 style={!isLocked ? {
                   backgroundColor: rarity.bg,
                   border: `1px solid ${rarity.border}`,
+                  boxShadow: `0 0 12px ${rarity.border}, inset 0 1px 0 ${rarity.border}`,
                 } : undefined}
               >
                 {isLocked && (
@@ -132,7 +134,10 @@ export default function TrophyPreview() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="h-full rounded-full"
-                style={{ backgroundColor: RARITY_COLORS.legendary.text }}
+                style={{
+                  background: `linear-gradient(90deg, ${RARITY_COLORS.legendary.text}88, ${RARITY_COLORS.legendary.text})`,
+                  boxShadow: `0 0 8px ${RARITY_COLORS.legendary.text}50`,
+                }}
               />
             </div>
           </div>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import MiniGames from '@/components/landing/MiniGames';
+import MasterShowcase from '@/components/landing/MasterShowcase';
 import { MARQUEE_ROW1, MARQUEE_ROW2, AGENT_COUNT, MAP_COUNT } from '@/lib/gamedata';
 
 /* ───────────────────── constants ───────────────────── */
@@ -292,6 +293,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ════════ MASTER SHOWCASE ════════ */}
+      <MasterShowcase />
 
       {/* ════════ AGENT MARQUEE ════════ */}
       <section className="py-16 overflow-hidden">

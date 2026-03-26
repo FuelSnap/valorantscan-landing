@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <rect width="180" height="180" rx="36" fill="#0F1923"/>
+  <rect x="8" y="8" width="164" height="164" rx="28" fill="none" stroke="#FF4655" stroke-width="3" opacity="0.3"/>
+  <text x="90" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="60" fill="#FF4655">VS</text>
+  <text x="90" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="16" fill="#ECE8E1" opacity="0.6">SCAN</text>
+</svg>

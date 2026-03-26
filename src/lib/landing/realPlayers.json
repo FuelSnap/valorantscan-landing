@@ -1,0 +1,1926 @@
+[
+  {
+    "rank": "Bronze 3",
+    "rankTier": 8,
+    "stats": {
+      "kd": 1.07,
+      "hsPercent": 24.9,
+      "winRate": 20.0,
+      "acs": 195.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 4,
+        "kd": 1.14
+      },
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.82
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 50.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Bronze 3",
+    "rankTier": 8,
+    "stats": {
+      "kd": 1.28,
+      "hsPercent": 25.7,
+      "winRate": 75.0,
+      "acs": 223.0,
+      "matches": 8
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 3,
+        "kd": 1.23
+      },
+      {
+        "name": "Viper",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 0.74
+      },
+      {
+        "name": "KAY/O",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.75
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 33.3
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Bronze 3",
+    "rankTier": 8,
+    "stats": {
+      "kd": 0.82,
+      "hsPercent": 23.2,
+      "winRate": 0.0,
+      "acs": 156.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Omen",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 0.78
+      },
+      {
+        "name": "Brimstone",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Split",
+        "winRate": 0.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Bronze 1",
+    "rankTier": 6,
+    "stats": {
+      "kd": 0.76,
+      "hsPercent": 9.8,
+      "winRate": 0.0,
+      "acs": 149.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Gekko",
+        "role": "Initiator",
+        "matches": 3,
+        "kd": 0.77
+      },
+      {
+        "name": "Sage",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 0.73
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Split",
+        "winRate": 0.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Bronze 3",
+    "rankTier": 8,
+    "stats": {
+      "kd": 1.48,
+      "hsPercent": 25.8,
+      "winRate": 0.0,
+      "acs": 283.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Fade",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 1.29
+      },
+      {
+        "name": "Raze",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.5
+      },
+      {
+        "name": "Killjoy",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.88
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Split",
+        "winRate": 0.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Bronze 3",
+    "rankTier": 8,
+    "stats": {
+      "kd": 1.2,
+      "hsPercent": 32.5,
+      "winRate": 66.7,
+      "acs": 241.0,
+      "matches": 3
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.31
+      },
+      {
+        "name": "Iso",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.67
+      },
+      {
+        "name": "Tejo",
+        "role": "Unknown",
+        "matches": 1,
+        "kd": 2.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Abyss",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 3",
+    "rankTier": 11,
+    "stats": {
+      "kd": 0.91,
+      "hsPercent": 19.4,
+      "winRate": 12.5,
+      "acs": 214.0,
+      "matches": 8
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 4,
+        "kd": 0.8
+      },
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 1.3
+      },
+      {
+        "name": "Neon",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.64
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 50.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 2",
+    "rankTier": 10,
+    "stats": {
+      "kd": 1.03,
+      "hsPercent": 12.8,
+      "winRate": 20.0,
+      "acs": 209.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Omen",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 1.23
+      },
+      {
+        "name": "Fade",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 0.79
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 50.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 3",
+    "rankTier": 11,
+    "stats": {
+      "kd": 1.07,
+      "hsPercent": 10.7,
+      "winRate": 53.8,
+      "acs": 197.0,
+      "matches": 13
+    },
+    "topAgents": [
+      {
+        "name": "Cypher",
+        "role": "Sentinel",
+        "matches": 9,
+        "kd": 1.17
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 0.9
+      },
+      {
+        "name": "Gekko",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.71
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 50.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 66.7
+      },
+      {
+        "name": "Haven",
+        "winRate": 50.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 2",
+    "rankTier": 10,
+    "stats": {
+      "kd": 0.92,
+      "hsPercent": 18.8,
+      "winRate": 40.0,
+      "acs": 199.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.35
+      },
+      {
+        "name": "Omen",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 2.0
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.38
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 1",
+    "rankTier": 9,
+    "stats": {
+      "kd": 0.75,
+      "hsPercent": 26.6,
+      "winRate": 50.0,
+      "acs": 178.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 3,
+        "kd": 0.8
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 0.62
+      },
+      {
+        "name": "Killjoy",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 3",
+    "rankTier": 11,
+    "stats": {
+      "kd": 0.77,
+      "hsPercent": 17.1,
+      "winRate": 40.0,
+      "acs": 180.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Viper",
+        "role": "Controller",
+        "matches": 4,
+        "kd": 0.74
+      },
+      {
+        "name": "Iso",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.87
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 50.0
+      },
+      {
+        "name": "Abyss",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 3",
+    "rankTier": 11,
+    "stats": {
+      "kd": 1.01,
+      "hsPercent": 15.4,
+      "winRate": 60.0,
+      "acs": 184.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 5,
+        "kd": 1.01
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 50.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 2",
+    "rankTier": 10,
+    "stats": {
+      "kd": 1.03,
+      "hsPercent": 13.9,
+      "winRate": 71.4,
+      "acs": 226.0,
+      "matches": 7
+    },
+    "topAgents": [
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 3,
+        "kd": 0.9
+      },
+      {
+        "name": "Astra",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 1.7
+      },
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.18
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 2",
+    "rankTier": 10,
+    "stats": {
+      "kd": 1.04,
+      "hsPercent": 17.1,
+      "winRate": 80.0,
+      "acs": 142.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Omen",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.14
+      },
+      {
+        "name": "Skye",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.5
+      },
+      {
+        "name": "Sage",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.44
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Silver 1",
+    "rankTier": 9,
+    "stats": {
+      "kd": 0.42,
+      "hsPercent": 10.7,
+      "winRate": 33.3,
+      "acs": 103.0,
+      "matches": 3
+    },
+    "topAgents": [
+      {
+        "name": "Gekko",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 0.3
+      },
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 0.83
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 1.33,
+      "hsPercent": 39.7,
+      "winRate": 50.0,
+      "acs": 261.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 2,
+        "kd": 1.06
+      },
+      {
+        "name": "Yoru",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 2.88
+      },
+      {
+        "name": "KAY/O",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.94
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 1.57,
+      "hsPercent": 15.4,
+      "winRate": 53.8,
+      "acs": 271.0,
+      "matches": 13
+    },
+    "topAgents": [
+      {
+        "name": "Astra",
+        "role": "Controller",
+        "matches": 8,
+        "kd": 1.33
+      },
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 2.07
+      },
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 5.5
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 50.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 66.7
+      },
+      {
+        "name": "Haven",
+        "winRate": 50.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 3",
+    "rankTier": 14,
+    "stats": {
+      "kd": 1.76,
+      "hsPercent": 23.9,
+      "winRate": 75.0,
+      "acs": 286.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Waylay",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 1.51
+      },
+      {
+        "name": "Cypher",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 3.17
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 2.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Abyss",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 0.75,
+      "hsPercent": 28.4,
+      "winRate": 50.0,
+      "acs": 140.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.67
+      },
+      {
+        "name": "Viper",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.18
+      },
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.59
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 50.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 0.89,
+      "hsPercent": 23.4,
+      "winRate": 30.0,
+      "acs": 204.0,
+      "matches": 10
+    },
+    "topAgents": [
+      {
+        "name": "KAY/O",
+        "role": "Initiator",
+        "matches": 3,
+        "kd": 0.7
+      },
+      {
+        "name": "Omen",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 1.28
+      },
+      {
+        "name": "Raze",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Abyss",
+        "winRate": 33.3
+      },
+      {
+        "name": "Split",
+        "winRate": 50.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 50.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 3",
+    "rankTier": 14,
+    "stats": {
+      "kd": 1.22,
+      "hsPercent": 35.3,
+      "winRate": 33.3,
+      "acs": 273.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 1.19
+      },
+      {
+        "name": "Gekko",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 1.24
+      },
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.0
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 0.0
+      },
+      {
+        "name": "Abyss",
+        "winRate": 50.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 2",
+    "rankTier": 13,
+    "stats": {
+      "kd": 0.92,
+      "hsPercent": 23.6,
+      "winRate": 40.0,
+      "acs": 186.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Fade",
+        "role": "Initiator",
+        "matches": 3,
+        "kd": 0.86
+      },
+      {
+        "name": "KAY/O",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.8
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.56
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 0.0
+      },
+      {
+        "name": "Abyss",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 1.47,
+      "hsPercent": 17.2,
+      "winRate": 83.3,
+      "acs": 229.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 3,
+        "kd": 1.29
+      },
+      {
+        "name": "KAY/O",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 1.75
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.39
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 0.77,
+      "hsPercent": 20.4,
+      "winRate": 50.0,
+      "acs": 179.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 3,
+        "kd": 0.93
+      },
+      {
+        "name": "Skye",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 0.67
+      },
+      {
+        "name": "Tejo",
+        "role": "Unknown",
+        "matches": 1,
+        "kd": 0.5
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Abyss",
+        "winRate": 50.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Gold 1",
+    "rankTier": 12,
+    "stats": {
+      "kd": 0.96,
+      "hsPercent": 16.0,
+      "winRate": 50.0,
+      "acs": 237.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 6,
+        "kd": 0.96
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 1.38,
+      "hsPercent": 43.2,
+      "winRate": 50.0,
+      "acs": 248.0,
+      "matches": 10
+    },
+    "topAgents": [
+      {
+        "name": "Astra",
+        "role": "Controller",
+        "matches": 5,
+        "kd": 1.15
+      },
+      {
+        "name": "Waylay",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 1.9
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.33
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 66.7
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 0.97,
+      "hsPercent": 34.5,
+      "winRate": 33.3,
+      "acs": 210.0,
+      "matches": 9
+    },
+    "topAgents": [
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 6,
+        "kd": 1.01
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 0.92
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 25.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 50.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 1",
+    "rankTier": 24,
+    "stats": {
+      "kd": 1.06,
+      "hsPercent": 26.4,
+      "winRate": 57.1,
+      "acs": 208.0,
+      "matches": 14
+    },
+    "topAgents": [
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 8,
+        "kd": 1.06
+      },
+      {
+        "name": "Cypher",
+        "role": "Sentinel",
+        "matches": 3,
+        "kd": 1.09
+      },
+      {
+        "name": "Veto",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 0.93
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 2",
+    "rankTier": 25,
+    "stats": {
+      "kd": 0.68,
+      "hsPercent": 20.5,
+      "winRate": 50.0,
+      "acs": 167.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 5,
+        "kd": 0.68
+      },
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.67
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 1",
+    "rankTier": 24,
+    "stats": {
+      "kd": 0.83,
+      "hsPercent": 26.2,
+      "winRate": 62.5,
+      "acs": 177.0,
+      "matches": 8
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 3,
+        "kd": 1.0
+      },
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 0.38
+      },
+      {
+        "name": "Neon",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.5
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 50.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 0.92,
+      "hsPercent": 39.9,
+      "winRate": 0.0,
+      "acs": 201.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 4,
+        "kd": 0.92
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 1.31,
+      "hsPercent": 34.1,
+      "winRate": 40.0,
+      "acs": 263.0,
+      "matches": 10
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 5,
+        "kd": 1.47
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 5,
+        "kd": 1.16
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 1",
+    "rankTier": 24,
+    "stats": {
+      "kd": 0.83,
+      "hsPercent": 42.9,
+      "winRate": 50.0,
+      "acs": 194.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 4,
+        "kd": 0.87
+      },
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 2,
+        "kd": 0.73
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 1.02,
+      "hsPercent": 27.1,
+      "winRate": 50.0,
+      "acs": 225.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 1.03
+      },
+      {
+        "name": "Reyna",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.26
+      },
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 0.63
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Abyss",
+        "winRate": 50.0
+      },
+      {
+        "name": "Split",
+        "winRate": 50.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Immortal 3",
+    "rankTier": 26,
+    "stats": {
+      "kd": 1.44,
+      "hsPercent": 23.1,
+      "winRate": 100.0,
+      "acs": 282.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Viper",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 1.62
+      },
+      {
+        "name": "Yoru",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 1.24
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Abyss",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.26,
+      "hsPercent": 19.5,
+      "winRate": 100.0,
+      "acs": 258.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Yoru",
+        "role": "Duelist",
+        "matches": 4,
+        "kd": 1.27
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.24
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.28,
+      "hsPercent": 37.1,
+      "winRate": 100.0,
+      "acs": 287.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Viper",
+        "role": "Controller",
+        "matches": 3,
+        "kd": 1.24
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 1.35
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.03,
+      "hsPercent": 26.6,
+      "winRate": 0.0,
+      "acs": 237.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Neon",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 0.89
+      },
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 0.88
+      },
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.16
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 0.0
+      },
+      {
+        "name": "Split",
+        "winRate": 0.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.01,
+      "hsPercent": 22.0,
+      "winRate": 100.0,
+      "acs": 203.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Waylay",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 1.0
+      },
+      {
+        "name": "Yoru",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 1.19
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 0.74
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Abyss",
+        "winRate": 100.0
+      },
+      {
+        "name": "Split",
+        "winRate": 100.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.75,
+      "hsPercent": 28.8,
+      "winRate": 100.0,
+      "acs": 324.0,
+      "matches": 5
+    },
+    "topAgents": [
+      {
+        "name": "Waylay",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 2.33
+      },
+      {
+        "name": "Iso",
+        "role": "Duelist",
+        "matches": 1,
+        "kd": 1.6
+      },
+      {
+        "name": "Killjoy",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.22
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.06,
+      "hsPercent": 30.6,
+      "winRate": 100.0,
+      "acs": 209.0,
+      "matches": 3
+    },
+    "topAgents": [
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 0.91
+      },
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.29
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 0.88,
+      "hsPercent": 33.8,
+      "winRate": 71.4,
+      "acs": 198.0,
+      "matches": 7
+    },
+    "topAgents": [
+      {
+        "name": "Yoru",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 0.31
+      },
+      {
+        "name": "Waylay",
+        "role": "Unknown",
+        "matches": 2,
+        "kd": 0.95
+      },
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 1,
+        "kd": 1.92
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      },
+      {
+        "name": "Corrode",
+        "winRate": 0.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.06,
+      "hsPercent": 32.4,
+      "winRate": 75.0,
+      "acs": 231.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Clove",
+        "role": "Controller",
+        "matches": 2,
+        "kd": 0.79
+      },
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 2.75
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 0.95
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      },
+      {
+        "name": "Breeze",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.64,
+      "hsPercent": 23.6,
+      "winRate": 100.0,
+      "acs": 283.0,
+      "matches": 4
+    },
+    "topAgents": [
+      {
+        "name": "Jett",
+        "role": "Duelist",
+        "matches": 3,
+        "kd": 1.67
+      },
+      {
+        "name": "Chamber",
+        "role": "Sentinel",
+        "matches": 1,
+        "kd": 1.5
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Pearl",
+        "winRate": 100.0
+      },
+      {
+        "name": "Bind",
+        "winRate": 100.0
+      },
+      {
+        "name": "Haven",
+        "winRate": 100.0
+      }
+    ]
+  },
+  {
+    "rank": "Radiant",
+    "rankTier": 27,
+    "stats": {
+      "kd": 1.09,
+      "hsPercent": 30.3,
+      "winRate": 66.7,
+      "acs": 248.0,
+      "matches": 6
+    },
+    "topAgents": [
+      {
+        "name": "Phoenix",
+        "role": "Duelist",
+        "matches": 2,
+        "kd": 1.04
+      },
+      {
+        "name": "Sova",
+        "role": "Initiator",
+        "matches": 2,
+        "kd": 1.0
+      },
+      {
+        "name": "Gekko",
+        "role": "Initiator",
+        "matches": 1,
+        "kd": 1.25
+      }
+    ],
+    "topMaps": [
+      {
+        "name": "Corrode",
+        "winRate": 100.0
+      },
+      {
+        "name": "Pearl",
+        "winRate": 0.0
+      },
+      {
+        "name": "Split",
+        "winRate": 0.0
+      }
+    ]
+  }
+]

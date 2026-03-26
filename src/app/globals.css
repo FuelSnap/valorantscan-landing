@@ -2,26 +2,541 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   Fonts + Theme Tokens (GLOBAL READABILITY)
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Font variables are injected by next/font in layout.tsx */
+
+  /* Light mode default */
+  color-scheme: light;
+
+  /* Theme tokens (light) */
+  --bg: 255 255 255;
+  --text: 15 23 42;       /* slate-900 */
+  --muted: 71 85 105;     /* slate-600 */
+  --muted-2: 100 116 139; /* slate-500 */
+  --surface: 255 255 255;
+  --surface-2: 248 250 252; /* slate-50 */
+  --border: 226 232 240;     /* slate-200 */
+
+  /* Optional: soft “brand wash” you can use safely */
+  --wash: 255 70 85;
+  --wash-alpha: 0.06;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  color-scheme: dark;
+
+  /* Theme tokens (dark) */
+  --bg: 10 20 29;            /* #0A141D */
+  --text: 236 232 225;       /* #ECE8E1 */
+  --muted: 180 190 203;
+  --muted-2: 140 150 165;
+  --surface: 15 25 35;       /* #0F1923 */
+  --surface-2: 20 32 45;
+  --border: 255 255 255;
+
+  --wash: 255 70 85;
+  --wash-alpha: 0.08;
+}
+
+/* ==========================================================================
+   Resets & Base
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+
+  /* ✅ Global readable defaults */
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+/* Optional global background wash (very subtle) */
+.bg-wash {
+  background:
+    radial-gradient(1200px 600px at 50% 12%, rgba(var(--wash) / var(--wash-alpha)) 0%, rgba(var(--wash) / 0) 60%),
+    rgb(var(--bg));
+}
+
+/* ==========================================================================
+   Scrollbar (theme-aware)
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb; /* light */
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0F1923; /* dark */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF4655;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BD3944;
+}
+
+/* ==========================================================================
+   Selection
+   ========================================================================== */
+
+::selection {
+  background: rgba(255, 70, 85, 0.22);
+  color: #111827;
+}
+
+.dark ::selection {
+  background: rgba(255, 70, 85, 0.3);
+  color: #ECE8E1;
+}
+
+/* ==========================================================================
+   Focus
+   ========================================================================== */
+
+*:focus-visible {
+  outline: 2px solid #FF4655;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Mobile Touch Target Safety Net (48x48 minimum)
+   ========================================================================== */
+
+/* Touch target safety — only for interactive form controls, not decorative elements */
+@media (pointer: coarse) {
+  button[type="submit"],
+  input[type="submit"] {
+    min-height: 44px;
   }
 }
+
+/* ==========================================================================
+   Global Theme Utility Aliases (use everywhere)
+   ========================================================================== */
+
+@layer utilities {
+  .bg-app {
+    background-color: rgb(var(--bg));
+  }
+  .bg-surface {
+    background-color: rgb(var(--surface));
+  }
+  .bg-surface-2 {
+    background-color: rgb(var(--surface-2));
+  }
+
+  .text-app {
+    color: rgb(var(--text));
+  }
+  .text-muted {
+    color: rgb(var(--muted));
+  }
+  .text-muted-2 {
+    color: rgb(var(--muted-2));
+  }
+
+  .border-app {
+    border-color: rgb(var(--border) / 0.7);
+  }
+}
+
+/* ==========================================================================
+   Existing Utilities (kept compatible)
+   ========================================================================== */
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-val-red to-val-accent-gold;
+  }
+
+  .glass {
+    @apply backdrop-blur-lg border
+           bg-white/80 border-zinc-200
+           dark:bg-white/5 dark:border-white/10;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-lg border
+           bg-black/10 border-zinc-200
+           dark:bg-black/30 dark:border-white/5;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-val-red/20;
+  }
+
+  .stat-card {
+    @apply p-4 rounded-lg border transition-all duration-300
+           bg-white border-zinc-200 text-zinc-900
+           dark:bg-gradient-to-br dark:from-val-bg-primary dark:to-val-bg-darker
+           dark:border-white/5 dark:text-val-text-primary;
+  }
+
+  .stat-card:hover {
+    @apply border-val-red/30 shadow-lg shadow-val-red/10;
+  }
+
+  .btn-primary {
+    @apply bg-val-red hover:bg-val-red-accent text-white
+           font-semibold px-6 py-3 rounded-lg transition-all duration-300
+           hover:shadow-lg hover:shadow-val-red/30;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-val-red text-val-red
+           hover:bg-val-red hover:text-white
+           font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .input-field {
+    @apply rounded-lg px-4 py-3 transition-all duration-300
+           bg-white border border-zinc-300 text-zinc-900 placeholder-zinc-400
+           focus:border-val-red focus:ring-1 focus:ring-val-red
+           dark:bg-val-bg-primary dark:border-white/10 dark:text-val-text-primary dark:placeholder-gray-500;
+  }
+
+  .nav-link {
+    @apply font-medium transition-colors duration-200
+           text-zinc-700 hover:text-zinc-900
+           dark:text-val-text-primary/70 dark:hover:text-val-red;
+  }
+
+  .nav-link-active {
+    @apply text-val-red;
+  }
+}
+
+.kbd {
+  @apply inline-block px-1 py-0.5 rounded bg-white/10 text-val-text-primary/60 font-mono text-[9px] mr-1 border border-white/5;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ==========================================================================
+   Skeleton
+   ========================================================================== */
+
+.skeleton {
+  @apply relative overflow-hidden rounded
+         bg-zinc-200 dark:bg-val-bg-gray;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================================================
+   Region Map
+   ========================================================================== */
+
+.region-path {
+  @apply cursor-pointer transition-all duration-300
+         fill-zinc-200 stroke-val-red/30
+         dark:fill-val-bg-primary;
+}
+
+.region-path:hover {
+  @apply fill-val-red/20 stroke-val-red;
+}
+
+.region-path.active {
+  @apply fill-val-red/40 stroke-val-red;
+}
+
+/* ==========================================================================
+   Charts (Tailwind-safe: NO !important inside @apply)
+   ========================================================================== */
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+.recharts-default-tooltip {
+  @apply rounded-lg shadow-xl border backdrop-blur-lg
+         bg-white/95 border-zinc-200 text-zinc-900
+         dark:bg-val-bg-darker/95 dark:border-white/10 dark:text-val-text-primary;
+}
+
+.recharts-tooltip-label {
+  @apply font-medium;
+}
+
+.recharts-tooltip-item {
+  @apply opacity-80;
+}
+
+/* ==========================================================================
+   Demo Ribbon
+   ========================================================================== */
+
+.demo-ribbon {
+  @apply fixed top-0 right-0 z-50 bg-val-accent-gold text-val-bg-darker
+         font-bold py-1 px-8 transform rotate-45 translate-x-8 translate-y-4 shadow-lg;
+  font-family: var(--font-oswald);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   Native <select> (theme-aware)
+   ========================================================================== */
+
+select {
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.dark select {
+  background-color: #0F1923;
+  color: #ECE8E1;
+  border: 1px solid rgba(236, 232, 225, 0.15);
+}
+
+select option {
+  background-color: inherit;
+  color: inherit;
+}
+
+select option:checked,
+select option:hover,
+select option:focus {
+  background-color: #FF4655;
+  color: #0A141D;
+}
+
+select option:disabled {
+  opacity: 0.45;
+}
+
+/* ==========================================================================
+   Phase 0: Tactical Brutalism Design Utilities
+   ========================================================================== */
+
+@layer utilities {
+  /* Ghost border — the design system standard for card/surface separation */
+  .ghost-border {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Data strip accents — 2px red highlight bars */
+  .data-strip-left {
+    border-left: 2px solid #FF4655;
+  }
+
+  .data-strip-bottom {
+    border-bottom: 2px solid #FF4655;
+  }
+
+  .data-strip-top {
+    border-top: 2px solid #FF4655;
+  }
+
+  /* Angular clip-path for tactical elements */
+  .clip-angular {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .clip-angular-sm {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  }
+}
+
+/* ==========================================================================
+   GLOBAL LIGHT-MODE READABILITY FIX
+   Overrides dark-theme text classes when NOT in .dark mode
+   ========================================================================== */
+
+/* Base “val-text-primary” text classes are great for dark mode,
+   but unreadable in light mode. Override them globally. */
+
+html:not(.dark) .text-val-text-primary {
+  color: rgb(var(--text)) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/90 {
+  color: rgb(var(--text) / 0.90) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/80 {
+  color: rgb(var(--text) / 0.85) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/70 {
+  color: rgb(var(--muted)) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/60 {
+  color: rgb(var(--muted)) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/50 {
+  color: rgb(var(--muted-2)) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/40 {
+  color: rgb(var(--muted-2)) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/30 {
+  color: rgb(var(--muted-2) / 0.9) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/20 {
+  color: rgb(var(--muted-2) / 0.7) !important;
+}
+
+html:not(.dark) .text-val-text-primary\/15 {
+  color: rgb(var(--muted-2) / 0.5) !important;
+}
+
+/* --- Page & section backgrounds --- */
+html:not(.dark) .bg-val-bg-darker {
+  background-color: rgb(var(--bg)) !important;
+}
+
+html:not(.dark) .bg-val-bg-primary {
+  background-color: rgb(var(--surface-2)) !important;
+}
+
+html:not(.dark) .bg-val-bg-primary\/40 {
+  background-color: rgb(var(--surface-2) / 0.4) !important;
+}
+
+html:not(.dark) .bg-val-bg-primary\/60 {
+  background-color: rgb(var(--surface-2) / 0.6) !important;
+}
+
+html:not(.dark) .bg-val-bg-darker\/60 {
+  background-color: rgb(var(--surface-2) / 0.5) !important;
+}
+
+html:not(.dark) .bg-val-bg-darker\/95 {
+  background-color: rgb(var(--surface-2) / 0.95) !important;
+}
+
+html:not(.dark) .bg-val-bg-gray {
+  background-color: #e5e7eb !important;
+}
+
+/* --- text-white → dark in light mode --- */
+html:not(.dark) .text-white {
+  color: rgb(var(--text)) !important;
+}
+
+/* Protect white text on colored backgrounds (higher specificity wins) */
+html:not(.dark) .bg-val-red .text-white,
+html:not(.dark) .bg-val-red.text-white,
+html:not(.dark) .bg-val-red-accent .text-white,
+html:not(.dark) .bg-val-red-accent.text-white,
+html:not(.dark) .bg-val-accent-gold .text-white,
+html:not(.dark) .bg-val-accent-gold.text-white,
+html:not(.dark) .bg-green-500 .text-white,
+html:not(.dark) .bg-green-500.text-white {
+  color: #fff !important;
+}
+
+/* --- White borders → subtle dark borders --- */
+html:not(.dark) .border-white\/5 { border-color: rgb(var(--border) / 0.3) !important; }
+html:not(.dark) .border-white\/10 { border-color: rgb(var(--border) / 0.5) !important; }
+html:not(.dark) .border-white\/15 { border-color: rgb(var(--border) / 0.6) !important; }
+html:not(.dark) .border-white\/20 { border-color: rgb(var(--border) / 0.7) !important; }
+html:not(.dark) .border-white\/25 { border-color: rgb(var(--border) / 0.8) !important; }
+html:not(.dark) .border-white\/30 { border-color: rgb(var(--border) / 0.9) !important; }
+
+/* --- bg-white/N → subtle dark tint on white --- */
+html:not(.dark) .bg-white\/5 { background-color: rgb(0 0 0 / 0.02) !important; }
+html:not(.dark) .bg-white\/10 { background-color: rgb(0 0 0 / 0.04) !important; }
+html:not(.dark) .bg-white\/15 { background-color: rgb(0 0 0 / 0.05) !important; }
+html:not(.dark) .bg-white\/20 { background-color: rgb(0 0 0 / 0.06) !important; }
+html:not(.dark) .bg-white\/30 { background-color: rgb(0 0 0 / 0.07) !important; }
+html:not(.dark) .bg-white\/40 { background-color: rgb(0 0 0 / 0.08) !important; }
+
+/* --- bg-black/N → lighten for white backgrounds --- */
+html:not(.dark) .bg-black\/10 { background-color: rgb(0 0 0 / 0.03) !important; }
+html:not(.dark) .bg-black\/20 { background-color: rgb(0 0 0 / 0.04) !important; }
+html:not(.dark) .bg-black\/30 { background-color: rgb(0 0 0 / 0.05) !important; }
+html:not(.dark) .bg-black\/40 { background-color: rgb(0 0 0 / 0.06) !important; }
+html:not(.dark) .bg-black\/50 { background-color: rgb(0 0 0 / 0.06) !important; }
+html:not(.dark) .bg-black\/55 { background-color: rgb(0 0 0 / 0.07) !important; }
+html:not(.dark) .bg-black\/60 { background-color: rgb(0 0 0 / 0.07) !important; }
+html:not(.dark) .bg-black\/70 { background-color: rgb(0 0 0 / 0.08) !important; }
+html:not(.dark) .bg-black\/75 { background-color: rgb(0 0 0 / 0.09) !important; }
+
+/* --- Hover state variants --- */
+html:not(.dark) .hover\:bg-white\/5:hover { background-color: rgb(0 0 0 / 0.03) !important; }
+html:not(.dark) .hover\:bg-white\/10:hover { background-color: rgb(0 0 0 / 0.05) !important; }
+html:not(.dark) .hover\:bg-black\/5:hover { background-color: rgb(0 0 0 / 0.03) !important; }
+
+/* --- Gradient stop overrides --- */
+html:not(.dark) .from-val-bg-primary { --tw-gradient-from: rgb(var(--surface-2)) !important; }
+html:not(.dark) .from-val-red\/20 { --tw-gradient-from: rgba(255, 70, 85, 0.08) !important; }
+html:not(.dark) .to-val-bg-darker { --tw-gradient-to: rgb(var(--bg)) !important; }
+html:not(.dark) .to-val-bg-primary { --tw-gradient-to: rgb(var(--surface-2)) !important; }
+html:not(.dark) .from-black\/55 { --tw-gradient-from: rgb(0 0 0 / 0.12) !important; }
+html:not(.dark) .via-black\/10 { --tw-gradient-via: rgb(0 0 0 / 0.03) !important; }
+html:not(.dark) .to-black\/70 { --tw-gradient-to: rgb(0 0 0 / 0.12) !important; }
+

@@ -8,8 +8,9 @@ import HeatmapPreview from './showcase/HeatmapPreview';
 import DriftLabPreview from './showcase/DriftLabPreview';
 import GoalTrackerPreview from './showcase/GoalTrackerPreview';
 import TrophyPreview from './showcase/TrophyPreview';
+import PeakHoursPreview from './showcase/PeakHoursPreview';
 
-type Tool = 'encounters' | 'heatmap' | 'driftlab' | 'goals' | 'trophies';
+type Tool = 'encounters' | 'heatmap' | 'driftlab' | 'goals' | 'trophies' | 'peakhours';
 
 const TABS: { id: Tool; label: string; icon: string; desc: string }[] = [
   {
@@ -42,6 +43,12 @@ const TABS: { id: Tool; label: string; icon: string; desc: string }[] = [
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
     desc: '100+ achievements from first ace to thousand-kill milestones.',
   },
+  {
+    id: 'peakhours',
+    label: 'Peak Hours',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    desc: 'Find your best play times. Know when you win most and when to stop queuing.',
+  },
 ];
 
 const COMPONENTS: Record<Tool, React.ComponentType> = {
@@ -50,6 +57,7 @@ const COMPONENTS: Record<Tool, React.ComponentType> = {
   driftlab: DriftLabPreview,
   goals: GoalTrackerPreview,
   trophies: TrophyPreview,
+  peakhours: PeakHoursPreview,
 };
 
 export default function MasterShowcase() {

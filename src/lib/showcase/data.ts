@@ -5,6 +5,7 @@ import type {
   DriftLabPreviewData,
   GoalPreviewData,
   TrophyPreviewData,
+  PeakHoursPreviewData,
 } from './types';
 
 /* ═══════════════════════════════════════════════════════════
@@ -29,6 +30,7 @@ export const COMPARISON_DATA: ComparisonRow[] = [
   { feature: 'Agent Mastery Heatmap', others: false, valorantscan: true, isHighlight: true },
   { feature: 'Goal Tracker with Streaks', others: false, valorantscan: true, isHighlight: true },
   { feature: '100+ Achievements & Trophies', others: false, valorantscan: true, isHighlight: true },
+  { feature: 'Peak Performance Windows', others: false, valorantscan: true, isHighlight: true },
   { feature: 'Crosshair Builder', others: false, valorantscan: true },
   { feature: 'Peek Reaction Trainer', others: false, valorantscan: true },
 ];
@@ -133,4 +135,73 @@ export const TROPHIES_DATA: TrophyPreviewData = {
     rarity: 'legendary',
     progress: { current: 25, max: 25 },
   },
+};
+
+/* ─── Peak Hours ─── */
+
+const TIME_SLOTS = ['6a–10a', '10a–2p', '2p–6p', '6p–10p', '10p–2a', '2a–6a'];
+
+export const PEAK_HOURS_DATA: PeakHoursPreviewData = {
+  grid: [
+    { day: 'Mon', slots: [
+      { label: TIME_SLOTS[0], winRate: 48, games: 6 },
+      { label: TIME_SLOTS[1], winRate: 51, games: 8 },
+      { label: TIME_SLOTS[2], winRate: 54, games: 12 },
+      { label: TIME_SLOTS[3], winRate: 61, games: 22 },
+      { label: TIME_SLOTS[4], winRate: 52, games: 14 },
+      { label: TIME_SLOTS[5], winRate: 39, games: 3 },
+    ]},
+    { day: 'Tue', slots: [
+      { label: TIME_SLOTS[0], winRate: 50, games: 4 },
+      { label: TIME_SLOTS[1], winRate: 53, games: 7 },
+      { label: TIME_SLOTS[2], winRate: 56, games: 10 },
+      { label: TIME_SLOTS[3], winRate: 64, games: 26 },
+      { label: TIME_SLOTS[4], winRate: 58, games: 18 },
+      { label: TIME_SLOTS[5], winRate: 41, games: 2 },
+    ]},
+    { day: 'Wed', slots: [
+      { label: TIME_SLOTS[0], winRate: 47, games: 5 },
+      { label: TIME_SLOTS[1], winRate: 50, games: 9 },
+      { label: TIME_SLOTS[2], winRate: 52, games: 11 },
+      { label: TIME_SLOTS[3], winRate: 59, games: 20 },
+      { label: TIME_SLOTS[4], winRate: 55, games: 16 },
+      { label: TIME_SLOTS[5], winRate: 38, games: 3 },
+    ]},
+    { day: 'Thu', slots: [
+      { label: TIME_SLOTS[0], winRate: 49, games: 5 },
+      { label: TIME_SLOTS[1], winRate: 52, games: 8 },
+      { label: TIME_SLOTS[2], winRate: 55, games: 13 },
+      { label: TIME_SLOTS[3], winRate: 66, games: 28 },
+      { label: TIME_SLOTS[4], winRate: 60, games: 19 },
+      { label: TIME_SLOTS[5], winRate: 43, games: 4 },
+    ]},
+    { day: 'Fri', slots: [
+      { label: TIME_SLOTS[0], winRate: 46, games: 3 },
+      { label: TIME_SLOTS[1], winRate: 49, games: 6 },
+      { label: TIME_SLOTS[2], winRate: 53, games: 14 },
+      { label: TIME_SLOTS[3], winRate: 57, games: 24 },
+      { label: TIME_SLOTS[4], winRate: 50, games: 20 },
+      { label: TIME_SLOTS[5], winRate: 37, games: 8 },
+    ]},
+    { day: 'Sat', slots: [
+      { label: TIME_SLOTS[0], winRate: 44, games: 4 },
+      { label: TIME_SLOTS[1], winRate: 51, games: 10 },
+      { label: TIME_SLOTS[2], winRate: 54, games: 16 },
+      { label: TIME_SLOTS[3], winRate: 56, games: 22 },
+      { label: TIME_SLOTS[4], winRate: 47, games: 18 },
+      { label: TIME_SLOTS[5], winRate: 35, games: 10 },
+    ]},
+    { day: 'Sun', slots: [
+      { label: TIME_SLOTS[0], winRate: 45, games: 5 },
+      { label: TIME_SLOTS[1], winRate: 52, games: 8 },
+      { label: TIME_SLOTS[2], winRate: 55, games: 14 },
+      { label: TIME_SLOTS[3], winRate: 58, games: 20 },
+      { label: TIME_SLOTS[4], winRate: 46, games: 15 },
+      { label: TIME_SLOTS[5], winRate: 36, games: 7 },
+    ]},
+  ],
+  bestWindow: { day: 'Thursday', time: '6pm – 10pm', winRate: 66 },
+  worstWindow: { day: 'Saturday', time: '2am – 6am', winRate: 35 },
+  optimalSession: { games: 4, dropPercent: 12 },
+  totalGames: 342,
 };

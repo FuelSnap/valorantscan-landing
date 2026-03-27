@@ -92,3 +92,18 @@ export interface TrophyPreviewData {
     progress: { current: number; max: number };
   };
 }
+
+export interface PeakHoursPreviewData {
+  grid: {
+    day: string;
+    slots: {
+      label: string;
+      winRate: number;
+      games: number;
+    }[];
+  }[];
+  bestWindow: { day: string; time: string; winRate: number };
+  worstWindow: { day: string; time: string; winRate: number };
+  optimalSession: { games: number; dropPercent: number };
+  totalGames: number;
+}

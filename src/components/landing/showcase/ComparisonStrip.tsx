@@ -8,7 +8,7 @@ export default function ComparisonStrip() {
   const vsCount = COMPARISON_DATA.length;
 
   return (
-    <div className="max-w-3xl mx-auto mb-12">
+    <div className="max-w-3xl mx-auto mb-6">
       {/* Header */}
       <div className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] items-center gap-2 sm:gap-4 mb-3 px-3">
         <span className="font-barlow text-[10px] font-semibold text-val-text-muted uppercase tracking-widest">Feature</span>

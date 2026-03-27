@@ -152,7 +152,7 @@ export default function LandingPage() {
       <LandingNav />
 
       {/* ════════ HERO ════════ */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pt-16 pb-10">
+      <section className="relative flex flex-col items-center justify-center overflow-hidden pt-20 pb-6">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,70,85,0.06)_0%,_transparent_70%)]" />
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -190,7 +190,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-oswald font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight mb-6"
+            className="font-oswald font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight mb-4"
           >
             <span className="text-val-text-primary">TRACK. ANALYZE.</span>
             <br />
@@ -202,7 +202,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-inter text-base sm:text-lg text-val-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed"
+            className="font-inter text-base sm:text-lg text-val-text-secondary max-w-2xl mx-auto mb-5 leading-relaxed"
           >
             The most advanced Valorant analytics platform. 7 tools no other tracker has,
             100+ trophies, encounter tracking &mdash; all free.
@@ -214,7 +214,7 @@ export default function LandingPage() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-6 flex flex-col items-center gap-4">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-4 flex flex-col items-center gap-3">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {['#FF4655', '#2DD4BF', '#F9D849', '#B042FF', '#3B82F6'].map((color, i) => (
@@ -229,7 +229,7 @@ export default function LandingPage() {
             </div>
 
             {/* How it works — inline 3 steps */}
-            <div className="flex items-center gap-2 sm:gap-4 mt-2">
+            <div className="flex items-center gap-2 sm:gap-4">
               {HOW_STEPS.map((step, i) => (
                 <div key={step.label} className="flex items-center gap-1 sm:gap-2">
                   {i > 0 && (
@@ -252,7 +252,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.0 }}
-            className="w-full max-w-2xl mx-auto mt-8"
+            className="w-full max-w-2xl mx-auto mt-5"
           >
             <LiveChart />
           </motion.div>
@@ -260,15 +260,15 @@ export default function LandingPage() {
       </section>
 
       {/* ════════ FEATURES (3 unique differentiators only) ════════ */}
-      <section className="py-14" id="features">
+      <section className="py-8" id="features">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-6"
           >
-            <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-3 block">
+            <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-2 block">
               What Others Don&apos;t Have
             </span>
             <h2 className="font-oswald font-bold text-3xl md:text-4xl">
@@ -284,9 +284,9 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group p-6 rounded-sm ghost-border bg-val-bg-secondary hover:bg-val-bg-surface transition-all duration-300 border-l-2 border-l-val-red/30"
+                className="group p-4 rounded-sm ghost-border bg-val-bg-secondary hover:bg-val-bg-surface transition-all duration-300 border-l-2 border-l-val-red/30"
               >
-                <div className="w-10 h-10 rounded-sm bg-val-red/10 flex items-center justify-center mb-4 text-val-red group-hover:bg-val-red/20 transition-colors">
+                <div className="w-9 h-9 rounded-sm bg-val-red/10 flex items-center justify-center mb-3 text-val-red group-hover:bg-val-red/20 transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
                   </svg>
@@ -305,17 +305,17 @@ export default function LandingPage() {
       <MasterShowcase />
 
       {/* ════════ MINI GAMES ════════ */}
-      <section className="py-16 border-t border-white/[0.06]" id="games">
+      <section className="py-10 border-t border-white/[0.06]" id="games">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
-          <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-3 block">
+          <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-2 block">
             Interactive
           </span>
-          <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-3">
+          <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-2">
             TEST YOUR <span className="text-val-red">KNOWLEDGE</span>
           </h2>
           <p className="font-inter text-sm text-val-text-secondary max-w-lg mx-auto">
@@ -326,7 +326,7 @@ export default function LandingPage() {
       </section>
 
       {/* ════════ FINAL CTA (merged with perks) ════════ */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-val-red/5 to-transparent" />
         <div className="relative max-w-2xl mx-auto px-4 text-center">
           <motion.div
@@ -335,15 +335,15 @@ export default function LandingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-4">
+            <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-3">
               READY TO <span className="text-val-red">SEE YOUR STATS</span>?
             </h2>
-            <p className="font-inter text-val-text-secondary mb-6 text-lg">
+            <p className="font-inter text-val-text-secondary mb-4 text-lg">
               Join 2,400+ players already on the waitlist.
             </p>
 
             {/* Perks inline */}
-            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto mb-8">
+            <div className="grid grid-cols-2 gap-2 max-w-md mx-auto mb-5">
               {PERKS.map((perk) => (
                 <div key={perk.text} className="flex items-center gap-2 text-left">
                   <svg className="w-4 h-4 text-val-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -356,7 +356,7 @@ export default function LandingPage() {
 
             <WaitlistForm />
 
-            <div className="flex items-center justify-center gap-4 mt-8 mb-4">
+            <div className="flex items-center justify-center gap-4 mt-5 mb-3">
               <a
                 href="https://x.com/ValorantScan"
                 target="_blank"
@@ -375,7 +375,7 @@ export default function LandingPage() {
       </section>
 
       {/* ════════ FOOTER ════════ */}
-      <footer className="py-8 border-t border-white/[0.06]">
+      <footer className="py-6 border-t border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <span className="font-oswald text-base font-bold tracking-tight">
@@ -388,7 +388,7 @@ export default function LandingPage() {
               <p className="font-inter text-xs text-val-text-muted">&copy; 2026 ValorantScan</p>
             </div>
           </div>
-          <p className="font-inter text-[10px] text-val-text-muted text-center mt-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-inter text-[10px] text-val-text-muted text-center mt-4 max-w-2xl mx-auto leading-relaxed">
             ValorantScan is not endorsed by Riot Games and does not reflect the views or opinions of
             Riot Games or anyone officially involved in producing or managing Riot Games properties.
             Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

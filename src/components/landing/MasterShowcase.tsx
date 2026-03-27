@@ -57,19 +57,19 @@ export default function MasterShowcase() {
   const ActiveComponent = COMPONENTS[active];
 
   return (
-    <section className="py-20 border-t border-white/[0.06]" id="showcase">
+    <section className="py-10 border-t border-white/[0.06]" id="showcase">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
-          <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-3 block">
+          <span className="font-barlow text-xs font-semibold text-val-red tracking-[0.3em] uppercase mb-2 block">
             Beyond Basic Stats
           </span>
-          <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-3">
+          <h2 className="font-oswald font-bold text-3xl md:text-4xl mb-2">
             WHAT <span className="text-val-red">OTHER TRACKERS</span> DON&apos;T HAVE
           </h2>
           <p className="font-inter text-sm text-val-text-secondary max-w-xl mx-auto">
@@ -81,7 +81,7 @@ export default function MasterShowcase() {
         <ComparisonStrip />
 
         {/* Tool Tabs */}
-        <div className="flex justify-center gap-1.5 sm:gap-2 mb-8 flex-wrap">
+        <div className="flex justify-center gap-1.5 sm:gap-2 mb-4 flex-wrap">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -101,7 +101,7 @@ export default function MasterShowcase() {
         </div>
 
         {/* Tool Description */}
-        <p className="text-center font-inter text-sm text-val-text-secondary mb-6 max-w-md mx-auto">
+        <p className="text-center font-inter text-sm text-val-text-secondary mb-4 max-w-md mx-auto">
           {TABS.find(t => t.id === active)?.desc}
         </p>
 
@@ -125,7 +125,7 @@ export default function MasterShowcase() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-10"
+          className="text-center mt-6"
         >
           <p className="font-inter text-sm text-val-text-secondary mb-1">
             All of this is included — <span className="text-val-text-primary font-semibold">completely free</span>.

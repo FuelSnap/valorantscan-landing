@@ -20,16 +20,17 @@ export const MY_PLAYER = {
 /* ─── Comparison Strip ─── */
 
 export const COMPARISON_DATA: ComparisonRow[] = [
-  { feature: 'Basic K/D & Win Rate', others: true, valorantscan: true },
-  { feature: 'Match History', others: true, valorantscan: true },
+  { feature: 'K/D, Win Rate & Match History', others: true, valorantscan: true },
+  { feature: 'Leaderboards', others: true, valorantscan: true },
+  { feature: 'Agent & Map Stats', others: true, valorantscan: true },
+  { feature: 'In-Game Overlay', others: true, valorantscan: true },
   { feature: 'Player Encounter Tracking', others: false, valorantscan: true, isHighlight: true },
   { feature: '365-Day Performance Trends', others: false, valorantscan: true, isHighlight: true },
   { feature: 'Agent Mastery Heatmap', others: false, valorantscan: true, isHighlight: true },
   { feature: 'Goal Tracker with Streaks', others: false, valorantscan: true, isHighlight: true },
   { feature: '100+ Achievements & Trophies', others: false, valorantscan: true, isHighlight: true },
   { feature: 'Crosshair Builder', others: false, valorantscan: true },
-  { feature: 'Streamer OBS Overlay', others: false, valorantscan: true },
-  { feature: 'Reaction Time Trainer', others: false, valorantscan: true },
+  { feature: 'Peek Reaction Trainer', others: false, valorantscan: true },
 ];
 
 /* ─── Player Encounters ─── */

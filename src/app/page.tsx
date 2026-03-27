@@ -1,11 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { AGENT_COUNT, MAP_COUNT } from '@/lib/gamedata';
 
 /* ─── dynamic imports for code splitting ─── */
 const MiniGames = dynamic(() => import('@/components/landing/MiniGames'), {
@@ -152,7 +150,7 @@ export default function LandingPage() {
       <LandingNav />
 
       {/* ════════ HERO ════════ */}
-      <section className="relative flex flex-col items-center justify-center overflow-hidden pt-20 pb-6">
+      <section className="relative overflow-hidden pt-20 pb-6">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,70,85,0.06)_0%,_transparent_70%)]" />
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -163,99 +161,95 @@ export default function LandingPage() {
           }}
         />
 
-        {/* Agent silhouettes */}
-        <div className="absolute left-0 bottom-0 w-1/3 h-[85%] opacity-[0.05] hidden lg:block pointer-events-none">
-          <Image src="/agents/full/jett.png" alt="" fill className="object-contain object-bottom" sizes="33vw" priority />
-        </div>
-        <div className="absolute right-0 bottom-0 w-1/3 h-[85%] opacity-[0.05] hidden lg:block pointer-events-none">
-          <Image src="/agents/full/reyna.png" alt="" fill className="object-contain object-bottom" sizes="33vw" priority />
-        </div>
-
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
-          {/* API Status badge */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm ghost-border bg-val-red/5 mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-val-red opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-val-red" />
-              </span>
-              <span className="font-barlow text-xs font-semibold text-val-red tracking-widest uppercase">
-                Riot API Application In Review
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-oswald font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight mb-4"
-          >
-            <span className="text-val-text-primary">TRACK. ANALYZE.</span>
-            <br />
-            <span className="text-val-red">DOMINATE.</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-inter text-base sm:text-lg text-val-text-secondary max-w-2xl mx-auto mb-5 leading-relaxed"
-          >
-            The most advanced Valorant analytics platform. 7 tools no other tracker has,
-            100+ trophies, encounter tracking &mdash; all free.
-          </motion.p>
-
-          {/* Waitlist form */}
-          <motion.div id="waitlist" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
-            <WaitlistForm />
-          </motion.div>
-
-          {/* Social proof */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-4 flex flex-col items-center gap-3">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {['#FF4655', '#2DD4BF', '#F9D849', '#B042FF', '#3B82F6'].map((color, i) => (
-                  <div key={i} className="w-7 h-7 rounded-full border-2 border-val-bg-primary flex items-center justify-center text-[10px] font-bold text-white" style={{ backgroundColor: color, zIndex: 5 - i }}>
-                    {['J', 'R', 'S', 'O', 'C'][i]}
-                  </div>
-                ))}
-              </div>
-              <span className="font-inter text-sm text-val-text-secondary">
-                <span className="font-semibold text-val-text-primary">2,400+</span> players on the waitlist
-              </span>
-            </div>
-
-            {/* How it works — inline 3 steps */}
-            <div className="flex items-center gap-2 sm:gap-4">
-              {HOW_STEPS.map((step, i) => (
-                <div key={step.label} className="flex items-center gap-1 sm:gap-2">
-                  {i > 0 && (
-                    <svg className="w-3 h-3 text-val-red/40 mr-1 sm:mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  )}
-                  <div className="w-6 h-6 rounded-full bg-val-red/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-oswald text-[10px] font-bold text-val-red">{i + 1}</span>
-                  </div>
-                  <div className="text-left">
-                    <div className="font-barlow text-[10px] sm:text-xs font-semibold text-val-text-primary uppercase tracking-wider">{step.label}</div>
-                    <div className="font-inter text-[9px] sm:text-[10px] text-val-text-muted hidden sm:block">{step.desc}</div>
-                  </div>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
+          {/* 2-column: text left, chart right on lg */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 items-center">
+            {/* Left — copy + form */}
+            <div>
+              {/* API Status badge */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm ghost-border bg-val-red/5 mb-4">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-val-red opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-val-red" />
+                  </span>
+                  <span className="font-barlow text-[10px] sm:text-xs font-semibold text-val-red tracking-widest uppercase">
+                    Riot API Application In Review
+                  </span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
+              </motion.div>
 
-          {/* Live chart */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.0 }}
-            className="w-full max-w-2xl mx-auto mt-5"
-          >
-            <LiveChart />
-          </motion.div>
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="font-oswald font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-3"
+              >
+                <span className="text-val-text-primary">TRACK. ANALYZE.</span>
+                <br />
+                <span className="text-val-red">DOMINATE.</span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="font-inter text-sm sm:text-base text-val-text-secondary max-w-lg mb-5 leading-relaxed"
+              >
+                The most advanced Valorant analytics platform. 7 tools no other tracker has,
+                100+ trophies, encounter tracking &mdash; all free.
+              </motion.p>
+
+              {/* Waitlist form */}
+              <motion.div id="waitlist" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
+                <WaitlistForm />
+              </motion.div>
+
+              {/* Social proof + how steps */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-4 flex flex-col gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {['#FF4655', '#2DD4BF', '#F9D849', '#B042FF', '#3B82F6'].map((color, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-val-bg-primary flex items-center justify-center text-[9px] font-bold text-white" style={{ backgroundColor: color, zIndex: 5 - i }}>
+                        {['J', 'R', 'S', 'O', 'C'][i]}
+                      </div>
+                    ))}
+                  </div>
+                  <span className="font-inter text-xs text-val-text-secondary">
+                    <span className="font-semibold text-val-text-primary">2,400+</span> on the waitlist
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 sm:gap-4">
+                  {HOW_STEPS.map((step, i) => (
+                    <div key={step.label} className="flex items-center gap-1 sm:gap-2">
+                      {i > 0 && (
+                        <svg className="w-3 h-3 text-val-red/40 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      )}
+                      <div className="w-5 h-5 rounded-full bg-val-red/10 flex items-center justify-center flex-shrink-0">
+                        <span className="font-oswald text-[9px] font-bold text-val-red">{i + 1}</span>
+                      </div>
+                      <div className="text-left">
+                        <div className="font-barlow text-[10px] sm:text-xs font-semibold text-val-text-primary uppercase tracking-wider">{step.label}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right — live chart (hidden on mobile, stacked below on md) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.0 }}
+              className="w-full"
+            >
+              <LiveChart />
+            </motion.div>
+          </div>
         </div>
       </section>
 

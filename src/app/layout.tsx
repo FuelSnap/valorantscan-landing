@@ -1,32 +1,9 @@
 import type { Metadata } from 'next';
-import { Orbitron, Rajdhani, Space_Mono, Oswald, Barlow_Condensed, Inter, JetBrains_Mono } from 'next/font/google';
+import { Oswald, Barlow_Condensed, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { WebSiteJsonLd, WebAppJsonLd } from '@/components/seo/JsonLd';
 
-// Legacy fonts (CSS var bridge for globals.css)
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const rajdhani = Rajdhani({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-body',
-  display: 'swap',
-});
-
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-mono',
-  display: 'swap',
-});
-
-// Tactical Brutalism fonts
 const oswald = Oswald({
   subsets: ['latin'],
   weight: ['700'],
@@ -97,14 +74,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${orbitron.variable} ${rajdhani.variable} ${spaceMono.variable} ${oswald.variable} ${barlowCondensed.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${oswald.variable} ${barlowCondensed.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
         <WebSiteJsonLd />
         <WebAppJsonLd />
       </head>
-      <body className="min-h-screen font-body antialiased">
+      <body className="min-h-screen font-inter antialiased">
         <ThemeProvider>
           {children}
         </ThemeProvider>

@@ -355,10 +355,41 @@ function ResultsPhase({ score, total, onPlayAgain }: { score: number; total: num
         </button>
       </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-        <p className="text-sm text-[#ECE8E1]/50 mb-1">Think you know YOUR agent stats?</p>
-        <p className="text-xs text-[#ECE8E1]/30">Join the waitlist above to track your real performance.</p>
-      </motion.div>
+      <GameWaitlistCTA />
+    </motion.div>
+  );
+}
+
+function GameWaitlistCTA() {
+  const [email, setEmail] = useState('');
+  const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.includes('@')) return;
+    setLoading(true);
+    try {
+      const res = await fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+      if (!res.ok) throw new Error();
+      setDone(true);
+    } catch { /* silent */ } finally { setLoading(false); }
+  };
+
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+      <p className="text-sm text-[#ECE8E1]/50 mb-3">Know your agents? Track your real agent mastery.</p>
+      {done ? (
+        <div className="flex items-center gap-2 justify-center">
+          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+          <span className="text-sm text-green-400 font-semibold">You&apos;re on the list!</span>
+        </div>
+      ) : (
+        <form onSubmit={submit} className="flex items-center gap-2 max-w-sm mx-auto">
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-[#ECE8E1] placeholder-[#ECE8E1]/30 focus:border-[#F97316]/50 focus:outline-none" />
+          <button type="submit" disabled={loading} className="px-4 py-2.5 rounded-lg bg-[#F97316] hover:bg-[#EA580C] text-white font-oswald font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50">{loading ? '...' : 'Join'}</button>
+        </form>
+      )}
     </motion.div>
   );
 }
